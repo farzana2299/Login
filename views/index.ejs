@@ -1,28 +1,20 @@
+<!DOCTYPE html>
 <html>
-
 <head>
-    <title>
-        <%=title%>
-    </title>
-    <link rel="stylesheet" href="/public/stylesheets/style.css" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
-
 <body>
     <nav>
         <ul>
-            <% if(!isAuthenticated) { %>
-                <button><a href="/login/" style="text-decoration: none;">Login</a></button>
-                <% } else { %>
-                    <button><a href="/logout/" style="text-decoration: none;">Logout</a></button>
-                    <% } %>
+            <% if (!isAuthenticated) { %>
+                <button><a href="/signin" style="text-decoration: none;">Login</a></button>
+            <% } else { %>
+                <button><a href="/logout" style="text-decoration: none;">Logout</a></button>
+            <% } %>
         </ul>
     </nav>
-    <h1>
-        <%=title%>
-    </h1>
-    <p>Welcome to <%=title%>
-        <!-- <pre><%= JSON.stringify(user,null,2)%></pre> -->
-    </p>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
 </body>
-
 </html>

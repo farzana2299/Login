@@ -10,12 +10,17 @@ const config = {
     secret: process.env.SECRET,
     baseURL: process.env.BASEURL,
     clientID: process.env.CLIENTID,
-    issuerBaseURL: process.env.ISSUER
+    clientSecret: process.env.CLIENTSECRET,
+    issuerBaseURL: process.env.ISSUER,
+    authorizationParams: {
+        response_type: 'code',
+        scope: 'openid profile email',
+        audience: 'https://dev-6yxitbr51jpb1cbo.us.auth0.com/api/v2/',
+    }
 };
 
 var app = express();
 
-// Set up the views directory and view engine
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -23,10 +28,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// Auth
 app.use(auth(config));
 
-// Use the indexRouter middleware
 app.use("/", indexRouter);
 
 app.listen(3000, () => {

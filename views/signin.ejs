@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+    <h1><%= title %></h1>
+    <form action="/login" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Sign In</button>
+    </form>
+    <button><a href="/login/google" style="text-decoration: none;">Sign In with Google</a></button>
+    <button><a href="/login/apple" style="text-decoration: none;">Sign In with Apple</a></button>
+</body>
+</html>

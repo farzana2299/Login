@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
-    <nav>
-        <ul>
-            <% if (!isAuthenticated) { %>
-                <button><a href="/signin" style="text-decoration: none;">Login</a></button>
-            <% } else { %>
-                <button><a href="/logout" style="text-decoration: none;">Logout</a></button>
-            <% } %>
-        </ul>
-    </nav>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <% if (!isAuthenticated) { %>
+    <div style="width: 80%; height: 450px;background-color: aquamarine;position: relative;left:10%;top: 10%;border-radius: 8px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+        <h1 style="color: darkblue;position: relative;left:30%;top: 30%;">Welcome to our new website</h1>
+        <div style="position: relative;left:42%;top: 40%;">
+            
+
+                <button class="button button2"><a href="/signin" style="text-decoration: none;"><b>Sign-In</b></a></button>
+           
+                <% }
+                 else 
+                 { %>
+                    <div style="width: 100%;height: 90px; background-color: lightblue;">
+                        <div style="position: relative;left: 83%;top: 15px;">
+                            <button class="button button2"><a href="/logout" style="text-decoration: none;"><b>Logout</b></a></button>
+                        </div>
+                    </div>
+                    <div class="sidebar">
+                        <div style="position: relative;top: 90px;left: 15px;">
+                        <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a><br>
+                        <a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a><br>
+                        <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a><br>
+                        <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+                    </div>
+                      </div>
+                      
+                      <div class="main">
+                        <h2>Example Website</h2>
+                        <p>Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                        <p>Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                      </div>
+                    <% } %>
+        </div>
+    </div>
+
 </body>
+
 </html>

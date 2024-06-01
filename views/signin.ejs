@@ -1,23 +1,33 @@
+<!-- signin.ejs -->
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
-    <h1><%= title %></h1>
-    <form action="/login" method="post">
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+
+    <div class="frm">
+        <form>
+            <h1 style="position: relative;left: 40%;color: darkblue;">Sign-In</h1>
+            <label for="fname" style="color: darkblue;"><b>Username</b></label>
+            <input type="text" id="fname" name="firstname" placeholder="Username">
+
+            <label for="lname" style="color: darkblue;"><b>Password</b></label>
+            <input type="text" id="lname" name="lastname" placeholder="Password">
+
+            <input style="position: relative;left: 35%;" type="submit" value="Submit"><br>
+            <div style="position: relative;left: 22%;">
+            <button class="buttons"><a href="/login/google" style="text-decoration: none;">Sign In with Google</a></button>
+            <button class="buttons"><a href="/login/apple" style="text-decoration: none;">Sign In with Apple</a></button>
         </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit">Sign In</button>
-    </form>
-    <button><a href="/login/google" style="text-decoration: none;">Sign In with Google</a></button>
-    <button><a href="/login/apple" style="text-decoration: none;">Sign In with Apple</a></button>
+        </form>
+    </div>
+    
 </body>
+
 </html>

@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 router.get('/', function(req, res) {
     res.render('index', {
@@ -20,8 +20,9 @@ router.get('/signin', function(req, res) {
 router.get('/login/google', (req, res) => {
     res.oidc.login({
         authorizationParams: {
-            connection: 'google-oauth2'
-        }
+            connection: 'google-oauth2',
+        },
+        returnTo: '/'
     });
 });
 
@@ -29,14 +30,10 @@ router.get('/login/google', (req, res) => {
 router.get('/login/apple', (req, res) => {
     res.oidc.login({
         authorizationParams: {
-            connection: 'apple'
-        }
+            connection: 'apple',
+        },
+        returnTo: '/'
     });
-});
-
-// Auth0 callback handler
-router.get('/callback', (req, res) => {
-    res.redirect('/');
 });
 
 module.exports = router;
